@@ -44,7 +44,7 @@
 		}
 		// Attempt to locate target for PIP button
 		const mediaControlsMutated = (mutations, observer) => {
-			const target = mediaControlsWrapper.getElementsByClassName("controls__right")[0] ? ? false;
+			const target = mediaControlsWrapper.getElementsByClassName("controls__right")[0] ?? false;
 			if (!target || target.length < 1) {
 				return false;
 			}
