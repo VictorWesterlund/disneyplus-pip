@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Disney+ | Picture in Picture
-// @namespace    https://disneyplus.com
+// @namespace    https://victorwesterlund.com/
 // @version      1.0
 // @description  Enable Picture in Picture on Disney+
 // @author       VictorWesterlund
