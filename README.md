@@ -6,7 +6,7 @@ Add Picture-in-Picture support on Disney+ in the browser.
 
 ## Install from the Chrome Web Store
 
-~[**Install from the Chrome Web Store**]()~ <- *Pending review so will be added soon*
+[**Install from the Chrome Web Store**](https://chrome.google.com/webstore/detail/disney%20-pip/mjncaeojcjldpplapjioikobkgedockm)
 
 ## Install Chrome Extension
 
