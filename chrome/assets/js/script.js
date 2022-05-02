@@ -1,35 +1,18 @@
 class PIPController {
 	constructor() {
 		this.element = null;
-
-		const config = {
-			childList: true,
-			subtree: true
-		}
-
-		const mutationTimeout = 500;
-		let mutating = null;
-		let prevHref = null;
 		
 		// SPA navigation handler
 		this.observer = new MutationObserver(() => {
 			if (this.isPlayerPage()) {
-				clearTimeout(mutating);
-				
-				// Wait for mutation to stop
-				mutating = setTimeout(() => {
-					// Attempt to inject PIP controls
-					if (prevHref !== window.location.href) {
-						this.injectPipControls();
-						prevHref = window.location.href;
-					}
-				}, mutationTimeout);
-			} else {
-				prevHref = window.location.href;
+				this.injectPipControls();
 			}
 		});
 
-		this.observer.observe(window.document.body, config);
+		this.observer.observe(window.document.body, {
+			childList: true,
+			subtree: true
+		});
 	}
 
 	// Returns true if the page is /video/
@@ -56,6 +39,7 @@ class PIPController {
 		const type = "button";
 
 		const pip = document.createElement(type);
+		pip.id = "pip-btn";
 		pip.type = type;
 		pip.role = type;
 		pip.tabindex = "0";
@@ -68,8 +52,17 @@ class PIPController {
 		return pip;
 	}
 
+	// PIP element has been created and injected into the DOM
+	hasPipControls() {
+		return document.getElementById("pip-btn") ? true : false;
+	}
+
 	// Insert the PIP toggle button and enable PIP on the video element
 	injectPipControls() {
+		if (this.hasPipControls()) {
+			return true;
+		}
+
 		this.element = document.getElementsByTagName("video")[0];
 
 		if (!this.isPlayerPage() || !this.element) {
