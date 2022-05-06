@@ -1,6 +1,6 @@
 ## Picture in Picture for Disney+
 
-![demo](https://user-images.githubusercontent.com/35688133/159330808-299d1175-1f89-4fcb-b153-707d2befaee8.png)
+![image](https://user-images.githubusercontent.com/35688133/167155676-ad4ae36c-66a7-416b-9085-a90bb514d5de.png)
 
 Add Picture-in-Picture support on Disney+ in the browser.
 
