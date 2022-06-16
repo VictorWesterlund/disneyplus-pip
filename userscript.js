@@ -58,7 +58,8 @@
 	// Poll document tree until video element is loaded
 	const init = (mutations, observer) => {
 		clearTimeout(timeout);
-		if(!window.location.href.includes("/video/")) {
+		const pattern = /^\/?([A-Za-z-]*)?\/video\//i;
+		if(!pattern.test(window.location.pathname)) {
 			return false;
 		}
 		if(document.getElementsByTagName("video")[0]) {
