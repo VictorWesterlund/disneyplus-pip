@@ -18,9 +18,9 @@ class PIPController {
 	// Returns true if the page is /video/
 	isPlayerPage() {
 		const url = new URL(window.location);
-		const pathname = url.pathname.split("/");
+		const pattern = /^\/?([A-Za-z-]*)?\/video\//i;
 
-		return pathname[1] === "video" ? true : false;
+		return pattern.test(url.pathname) ? true : false;
 	}
 
 	// Enter/exit PIP mode
