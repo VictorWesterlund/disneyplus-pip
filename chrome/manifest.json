@@ -1,7 +1,7 @@
 {
 	"name": "Disney+ PIP",
 	"description": "Adds Picture-in-Picture (PIP) support for Disney+",
-	"version": "1.2",
+	"version": "1.3",
 	"manifest_version": 3,
 	"content_scripts": [{
 		"matches": ["https://*.disneyplus.com/*"],
